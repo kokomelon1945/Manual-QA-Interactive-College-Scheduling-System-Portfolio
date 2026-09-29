@@ -1,0 +1,8 @@
+# Test Plan: Interactive College Scheduling System
+
+## 1. Test Objective
+To ensure that all master data management features (Courses, Lecturers, Rooms), schedule generation, automated credit/duration calculations, and business validation rules (operational hours and schedule conflict prevention) function correctly, accurately, and stably.
+
+## 2. Test Scope
+* **Positive Testing:** Adding, updating, and deleting master data and schedules using valid inputs.
+* **Negative Testing:** Validating empty forms, master data name duplication, lecture hours outside operational limits (before 07:00 or after 16:00 WIB), and class or room conflict prevention.
