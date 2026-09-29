@@ -1,0 +1,30 @@
+# Test Scenarios (Positive & Negative)
+
+## A. Master Courses Module
+* **TS-CRS-01 (Positive):** Add a new course with valid name and credit (SKS) data.
+* **TS-CRS-02 (Positive):** Update/edit existing course data.
+* **TS-NEG-CRS-01 (Negative):** Reject course creation when the Course Name field is left blank.
+* **TS-NEG-CRS-02 (Negative):** Reject course creation with invalid credit weights (e.g., negative or 0).
+* **TS-NEG-CRS-03 (Negative):** Prevent duplicate course names in the master data.
+
+## B. Master Lecturers Module
+* **TS-LEC-01 (Positive):** Add new lecturer data completely 
+* **TS-LEC-02 (Positive):** Update existing lecturer data.
+* **TS-NEG-LEC-01 (Negative):** Reject lecturer data saving if the Name & Title field is blank.
+* **TS-NEG-LEC-02 (Negative):** Prevent duplicate lecturer names in the master data.
+
+## C. Master Rooms Module
+* **TS-ROM-01 (Positive):** Add a new room with a valid name, capacity, and building.
+* **TS-ROM-02 (Positive):** Update room information data.
+* **TS-NEG-ROM-01 (Negative):** Reject room saving if the Room Name field is blank.
+* **TS-NEG-ROM-02 (Negative):** Reject room capacity with negative or zero (`0`) values.
+* **TS-NEG-ROM-03 (Negative):** Prevent duplicate room names in the master data.
+
+## D. Schedule & Business Rules Module
+* **TS-SCH-01 (Positive):** Successfully add a valid class schedule with automated end-time calculation (1 Credit = 50 minutes).
+* **TS-SCH-02 (Positive):** Successfully filter schedules by day and keyword search.
+* **TS-NEG-SCH-01 (Negative):** Reject schedule saving if core options (Course/Lecturer/Room) are unselected.
+* **TS-NEG-SCH-02 (Negative):** Reject schedules when start/end times fall **outside operational hours** (before 07:00 or after 16:00 WIB).
+* **TS-NEG-SCH-03 (Negative):** Detect and prevent **class/parallel conflicts** (the same class cannot take two courses at overlapping times).
+* **TS-NEG-SCH-04 (Negative):** Detect and prevent **room conflicts** (the same room cannot be used by two different schedules at overlapping times).
+* **TS-NEG-SCH-05 (Negative):** Display an interactive warning if a user attempts to schedule while master data is empty.
